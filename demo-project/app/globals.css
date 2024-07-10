@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GlobalStyles.css */
+/* GlobalStyles.module.css */
+.placeholder-color {
+  &::placeholder {
+    color: #5cfffa;
+  }
+}
+
+

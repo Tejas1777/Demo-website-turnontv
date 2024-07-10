@@ -1,0 +1,7 @@
+.placeholderColor {
+    &::placeholder {
+      color: #5cfffa !important; /* Ensures the placeholder color */
+    }
+  }
+  
+  
