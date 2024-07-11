@@ -6,45 +6,11 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import slides from './blogcontent/slides';
+import Navbar from './components/navbar';
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    {
-      image: "https://www.expedrion.biz/uploads/tv/images/interviewthumbnails/thehhn-tv-slide.png",
-      title: "thehhn.tv",
-      content: "The biggest rap stars of this generation might be known for their bravado and unattainable wealth, but the creators of Hip Hop Network Television want to remind fans of all ages of the genre’s humble beginnings..."
-    },
-    {
-      image: "https://www.expedrion.biz/uploads/tv/images/interviewthumbnails/roaddirt-tv-slide.png",
-      title: "roaddirt.tv",
-      content: "For Rob Brooks, the “RIDE LIFE” is all the more worth living if he can share episodes from his journeys, long after he’s parked his motorcycle..."
-    },
-    {
-      image: "https://www.expedrion.biz/uploads/tv/images/interviewthumbnails/alexrobinson-img.png",
-      title: "alexrobinson.tv",
-      content: "Dive into the world of Alex Robinson, a filmmaking virtuoso whose lens tells stories beyond boundaries. From WWII bomber restorations to heartwarming connections with therapy horses..."
-    },
-    {
-      image: "https://www.expedrion.biz/uploads/tv/images/interviewthumbnails/paulcostabile-img.jpg",
-      title: "paulcostabile.tv",
-      content: "Although his interviews featuring Hollywood heavyweights could be seen on major television and cable networks across the country, Paul Costabile still yearned to build a digital presence on his own terms..."
-    },
-    {
-      image: "https://www.expedrion.biz/uploads/tv/images/interviewthumbnails/BoardroomLogo.png",
-      title: "Boardroom.tv",
-      content: "Founded by 2x NBA Champion and Finals MVP Kevin Durant and entrepreneur Rich Kleiman, The Boardroom brings fans inside the business of sports as never seen before..."
-    },
-    {
-      image: "https://www.expedrion.biz/uploads/tv/images/interviewthumbnails/maffMarquee-img.jpg",
-      title: "maff.tv",
-      content: "Music, Art, Fashion Forward touts 6,000+ hand-picked videos and 5,000+ creatives from around the world. Founded by professionals on a mission to empower underrepresented designers and artists globally..."
-    },
-    {
-      image: "https://www.expedrion.biz/uploads/tv/images/interviewthumbnails/CookingWithGranny.jpg",
-      title: "Cookingwithgranny.tv",
-      content: "Cooking with Granny is a multicultural, multifaceted, multi-generational homage to the best chefs we know — our grandmothers. The web series features 9 groovy grannies of 9 different cultures..."
-    }
-  ];
+
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
   };
@@ -53,28 +19,18 @@ export default function Home() {
   };
   return (
     <div className="min-h-screen bg-black">
-      <nav className="bg-black p-4 w-full max-w-8xl mx-auto fixed top-0 z-50">
-        <div className="container mx-auto flex justify-between item-center">
-          <span className="text-white text-5xl font-bold italic">.TV</span>
-          <ul className="flex space-x-12 text-white font-bold text-2xl justify-end">
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#stories">Stories</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+      <Navbar />
     <div className="text-center mt-20">
     <h2 className="text-9xl font-bold mb-2 text-white italic">TURN ON</h2>
     <div className="flex justify-center">
     <video preload="auto" 
-          playsInline 
-          autoPlay 
-          loop 
-          poster="https://www.expedrion.biz/uploads/tv/images/yellow-tv.jpg" 
-          src="https://www.expedrion.biz/uploads/tv/videos/dot-tv main.mp4"
-          className="w-42 h-32 object-cover rounded"></video>
+       playsInline 
+       autoPlay 
+       loop 
+       muted
+       poster="https://www.expedrion.biz/uploads/tv/images/yellow-tv.jpg" 
+       src="https://www.expedrion.biz/uploads/tv/videos/dot-tv main.mp4"
+       className="w-42 h-32 object-cover rounded"></video>
           </div>
     <h2 className="text-9xl font-bold mb-2 text-white italic">YOUR DOMAIN</h2>
     <FontAwesomeIcon icon={faArrowDown} size="sm" className="text-white" />
@@ -147,7 +103,7 @@ export default function Home() {
   </div>
 </div>
 <div className="text-center mt-10 flex items-center justify-center">
-  <video preload="auto" playsInline autoPlay loop poster="https://www.expedrion.biz/uploads/tv/images/yellow-tv.jpg" src="https://www.expedrion.biz/uploads/tv/videos/dot-tv main.mp4" className="w-96 h-64 object-cover rounded"></video>
+  <video preload="auto" playsInline autoPlay loop muted poster="https://www.expedrion.biz/uploads/tv/images/yellow-tv.jpg" src="https://www.expedrion.biz/uploads/tv/videos/dot-tv main.mp4" className="w-96 h-64 object-cover rounded"></video>
 </div>
 <div className="mt-10 text-center">
 <span className="text-xl font-bold text-white justify-center italic block">Who's on.TV</span>
@@ -162,6 +118,7 @@ export default function Home() {
          playsInline
          autoPlay
          loop
+         muted
          poster="https://www.expedrion.biz/uploads/tv/images/yellow-tv.jpg"
          src="https://www.expedrion.biz/uploads/tv/videos/p-inline-color.mp4"
 ></video>
@@ -177,6 +134,7 @@ export default function Home() {
          playsInline
          autoPlay
          loop
+         muted
          poster="https://www.expedrion.biz/uploads/tv/images/yellow-tv.jpg"
          src="https://www.expedrion.biz/uploads/tv/videos/p-inline-1.mp4"
 ></video>
@@ -192,6 +150,7 @@ export default function Home() {
          playsInline
          autoPlay
          loop
+         
          poster="https://www.expedrion.biz/uploads/tv/images/yellow-tv.jpg"
          src="https://www.expedrion.biz/uploads/tv/videos/dot-TV-shift.mp4"
 ></video>
